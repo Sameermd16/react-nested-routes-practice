@@ -14,6 +14,7 @@ import Web from './components/about/Web'
 import Iphone from './components/about/Iphone'
 import Games from './components/about/Games'
 import Android from './components/about/Android'
+import GoalDetails from './components/about/GoalDetails'
 
 function App() {
 
@@ -34,8 +35,10 @@ function App() {
           <Route path='mission' element={<MissionLayout />}>
             <Route index element={<Mission />} />
             <Route path='goal' element={<Goal />} />
+            <Route path='goal/:id' element={<GoalDetails />} /> 
             <Route path='contribution' element={<Contribution />}/>
           </Route>
+
           <Route path='contact' element={<Contact />} />
         </Route>
       </Routes>
