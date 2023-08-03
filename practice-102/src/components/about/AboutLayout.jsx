@@ -1,15 +1,20 @@
-import { Link, Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 
 export default function AboutLayout() {
+    const activeStyles ={
+        textDecoration: 'underline',
+        fontWeight: 'bold'
+    }
+
     return (
         // layout route contains links and outlet => need to import from react-router-dom
         <>
-            <div className='about-links'>
+            <div className='about-links mb-2'>
                 {/* page we need to show when user clicks on about from main menu */}
-                <Link to='.'>Web</Link>  
-                <Link to='android'>Andriod</Link>  
-                <Link to='Games'>Games</Link>  
-                <Link to='Iphone'>Iphone</Link>  
+                <NavLink to='.' style={({isActive}) => isActive ? activeStyles : null} end >Web</NavLink>  
+                <NavLink to='android' style={({isActive}) => isActive ? activeStyles : null} >Andriod</NavLink>  
+                <NavLink to='Games' style={({isActive}) => isActive ? activeStyles : null} >Games</NavLink>  
+                <NavLink to='Iphone' style={({isActive}) => isActive ? activeStyles : null} >Iphone</NavLink>  
             </div>
             <Outlet />
         </>
