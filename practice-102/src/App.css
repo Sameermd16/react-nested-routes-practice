@@ -40,9 +40,11 @@ footer {
 .mission-header > li > a {
     text-decoration: none;
     margin-left: 15px;
+    color: black;
 }
 .mission-header > li > a:hover {
     text-decoration: underline;
+    font-weight: bold;
 }
 
 .about-links a{
@@ -56,4 +58,12 @@ footer {
 }
 .about {
     margin-top: 20px;
+}
+.android-phones-nav-div > h2 > a{
+    text-decoration: none;
+    color: black;
+}
+.android-phones-nav-div > h2 > a:hover {
+    text-decoration: underline;
+    color: orange;
 }

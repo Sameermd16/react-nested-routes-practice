@@ -1,18 +1,24 @@
-import { Link, Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 
 export default function MissionLayout() {
+
+    const activeStyles = {
+        textDecoration: 'underline',
+        fontWeight: 'bold'
+    }
+
     return (
         <>
         <div>
             <ul className='mission-header'>
                 <li>
-                    <Link to='.'>dashboard</Link>
+                    <NavLink to='.' style={({isActive}) => isActive ? activeStyles : null} end >dashboard</NavLink>
                 </li>
                 <li>
-                    <Link to='goal'>Goal</Link>
+                    <NavLink to='goal' style={({isActive}) => isActive ? activeStyles : null} >Goal</NavLink>
                 </li>
                 <li>
-                    <Link to='contribution'>Contribution</Link>
+                    <NavLink to='contribution' style={({isActive}) => isActive ? activeStyles : null} >Contribution</NavLink>
                 </li>
             </ul>
         </div>

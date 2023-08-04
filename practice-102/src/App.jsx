@@ -15,6 +15,7 @@ import Iphone from './components/about/Iphone'
 import Games from './components/about/Games'
 import Android from './components/about/Android'
 import GoalDetails from './components/about/GoalDetails'
+import AndroidLayout from './components/AndroidLayout'
 
 function App() {
 
@@ -25,9 +26,14 @@ function App() {
           <Route index element={<Home />} />
 
           <Route path='about' element={<AboutLayout />}>
-            <Route index element={<About />} />
-            <Route path='web' element={<Web />} />
-            <Route path='android' element={<Android />} />
+            <Route index element={<Web />} />
+            <Route path='android' element={<AndroidLayout />}>
+              <Route index element={<Android />} />
+              <Route path='oppo' element={<h4>These are opp phone details</h4>} />
+              <Route path='mi' element={<h4>These are MI phone details</h4>} />
+              <Route path='motorola' element={<h4>These are motorola phone details</h4>} />
+              <Route path='lava' element={<h4>These are lava phone details</h4>} />
+            </Route>
             <Route path='iphone' element={<Iphone />} />
             <Route path='games' element={<Games />} />
           </Route>
